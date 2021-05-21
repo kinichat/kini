@@ -1,8 +1,14 @@
-![kini](https://raw.githubusercontent.com/kinichat/kini/master/kini.png)
+![kini](https://raw.githubusercontent.com/kinichat/kini/master/logo/kini_200px.png)
 
 # kini
 
-Oh hi! Ermmm... how is your day going? Yeah, ermmm... here you can find some kini resources like... kini's protocol(`PROTOCOL.md`), kini's logo and, ermmm, stuff.
+(Oh hi! Ermmm... how is your day going?)
+
+kini(recursive acronym of "Kini Is Not IRC") is a simple chat protocol, client and server designed to be simple to use, decentralized and fast, while supporting modern features like markup languages and media files.
+
+## This repository
+
+Yeah, ermmm... here you can find some kini resources like... kini's protocol(`PROTOCOL.md`), kini's logo and, ermmm, stuff.
 
 If you are looking for kini client/server source code, you should be looking for it in kinichat/kiniclient and kinichat/kiniserver instead.
 
