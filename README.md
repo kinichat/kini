@@ -1,3 +1,5 @@
+![kini](https://raw.githubusercontent.com/kinichat/kini/master/kini.png)
+
 # kini
 
 Oh hi! Ermmm... how is your day going? Yeah, ermmm... here you can find some kini resources like... kini's protocol(`PROTOCOL.md`), kini's logo and, ermmm, stuff.
