@@ -10,25 +10,23 @@ Packet sent by the sender:
 
 | Offset(bytes) | Size | Description                                             |
 |---------------|------|---------------------------------------------------------|
-| 0             | 4    | Package checksum, not including the checksums           |
-| 4             | 24   | Username(only ASCII characters, padded with 0x00)       |
-| 28            | 4    | User's password, as a 32-bit unsigned integer           |
-| 32            | 24   | Channel(only ASCII characters, padded with 0x00)        |
-| 56            | 4    | Message length(in bytes): LEN                           |
-| 60            | LEN  | Message data                                            |
-| 60 + LEN      | 4    | Copy of package checksum, not including the checksums   |
+| 0             | 4    | Package checksum, not including the checksum            |
+| 4             | 4    | User's password, as a 32-bit unsigned integer           |
+| 8             | 4    | Message length(in bytes): LEN                           |
+| 12            | 20   | Username(NULL-terminated)                               |
+| 32            | 32   | Channel(NULL-terminated)                                |
+| 64            | LEN  | Message data                                            |
 
 Packet broadcasted by the server(replaces password with hash):
 
 | Offset(bytes) | Size | Description                                             |
 |---------------|------|---------------------------------------------------------|
-| 0             | 4    | Package checksum, not including the checksums           |
-| 4             | 24   | Username(only ASCII characters, padded with 0x00)       |
-| 28            | 4    | Hash of user's password, treated as a signature         |
-| 32            | 24   | Channel(only ASCII characters, padded with 0x00)        |
-| 56            | 4    | Message length(in bytes): LEN                           |
-| 60            | LEN  | Message data                                            |
-| 60 + LEN      | 4    | Copy of package checksum, not including the checksums   |
+| 0             | 4    | Package checksum, not including the checksum            |
+| 4             | 4    | Hash of user's password, treated as a signature         |
+| 8             | 4    | Message length(in bytes): LEN                           |
+| 12            | 20   | Username(NULL-terminated)                               |
+| 32            | 32   | Channel(NULL-terminated)                                |
+| 64            | LEN  | Message data                                            |
 
 ## 2. Hashes and checksums
 
