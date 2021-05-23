@@ -4,7 +4,7 @@ Hi! This is the specification for kini's protocol, where you can find all the de
 
 ## 1. Communication & Packets
 
-kiniprotocol uses TCP and port 15999 for communication. Messages are sent as simple packages, containing the sender's username, message and some additional data for security and data loss prevention:
+kiniprotocol uses a TCP-based communication library called [msgbox](https://github.com/tylerneylon/msgbox) and port 15999 for communication. Messages are sent as simple packages, containing the sender's username, message and some additional data for security and data loss prevention:
 
 Packet sent by the sender:
 
@@ -80,7 +80,15 @@ uint32_t oh_fuck(uint32_t x) {
 
 ## 3. Sending & Receiving Messages
 
+### On connection
+
+1. The new client sends a message containing it's username and password(32-bit unsigned integer) with an empty string as a channel to the server(the contents don't matter).
+2. The server sends a message with any username and password hash, but containing a newline-separated list of channels as the content and sent through that same channel, but only to the client that sent the message, not broadcasted.
+
+### After connection
+
 1. The sender sends the message containing it's password(32-bit unsigned integer) to the server.
 2. The server broadcasts the message but replacing the password with a hash of it taken with the function above.
-3. The clients receive the message!
-4. Everyone's happy
+3. The clients receive the message.
+4. Everyone's happy!
+
