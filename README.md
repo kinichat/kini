@@ -18,6 +18,7 @@ If you are looking for kini client/server source code, you should be looking for
 
 Just contact anyone of us for more information:
 - segfaultdev(segfaultdev@protonmail.com)
+- unsafecast (unsafecast@protonmail.com)
 
 (You can add your name here if you contributed to any of kini's repositories)
 
